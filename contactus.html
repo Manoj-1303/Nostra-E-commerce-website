@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra</title>
+    <!--Link CSS File-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Link Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <!--Navigation Bar-->
+    <nav class="navbar">
+        <h1>Nostra</h1>
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="./index.html">Home</a></p>
+            <p class="navbar-link"><a href="collections.html">Collections</a></p>
+            <p class="navbar-link"><a href="./contactus.html">Contact Us</a></p>
+        </div>
+
+
+        <div class="navbar-menu-toggle">
+            <i id="side-navbar-activate" class="fa-solid fa-bars"></i>
+        </div>
+
+
+
+
+
+    </nav>
+
+    <!--Side Navbar-->
+
+    <div class="side-navbar">
+        <p style="text-align: right;">
+            <i id="side-navbar-close" class="fa-solid fa-xmark"></i>
+        </p>
+        <div class="side-navbar-links">
+
+            <p class="side-navbar-link"><a href="./index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="./index.html">New Arrival</a></p>
+            <p class="side-navbar-link"><a href="./index.html">Most Wanted</a></p>
+            <p class="side-navbar-link"><a href="./collections.html">Collections</a></p>
+            <p class="side-navbar-link"><a href="./contactus.html">Contact Us</a></p>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="contact-form">
+            <h2>Let's Talk</h2>
+            <p class="contact-form-subtitle">Tell us what you need and our team will get back to you shortly.</p>
+
+            <form action="#" method="post" id="contactForm">
+                <div class="contact-form-row">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="news">
+        <h2>Join our News Letter</h2>
+        <p style="text-align: center;">Signup for our email newspaper to get exclusive discounts, updates, and more</p>
+        <div style="margin-top: 10px;">
+            <input class="search">
+        </div>
+        <div>
+            <button> Subscribe <i class="fa-solid fa-arrow-right"></i> </button>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="headingText">Nostra</h2>
+                <p>The Standard chunk of Lorem ipsum
+                    used since the 1500s is reprodused
+                    below for those interest</p>
+                <div class="footer-icon-container">
+                    <i class="icon fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    <i class="icon fa-brands fa-twitter" style="color: #ffffff;"></i>
+                    <i class="icon fa-brands fa-facebook" style="color: #ffffff;"></i>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <p class="subtitle">@ 2026 Nostra.com</p>
+    </div>
+
+
+
+    <script src="./contact.js"></script>
+</body>
+
+</html>
