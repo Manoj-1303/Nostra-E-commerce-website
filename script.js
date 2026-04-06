@@ -86,24 +86,21 @@ likebuttons.forEach((btn)=>{
     })
 })
 
-window.addEventListener("scroll",function(){
-    var elements = this.document.querySelectorAll(".initial-scroll-animate")
-    elements.forEach((el)=>{
-        windowHeight = window.innerHeight
-     var elbound = el.getBoundingClientRect()
-   
+function revealScrollElements() {
+    var elements = document.querySelectorAll(".initial-scroll-animate")
+    elements.forEach((el) => {
+        var windowHeight = window.innerHeight
+        var elbound = el.getBoundingClientRect()
 
-     console.log(windowHeight)
-     console.log(elbound.top)
-     if(windowHeight>elbound.top-100){
-        console.log("Hi")
-    el.classList.remove("reveal-scroll-animate")
+        if (windowHeight > elbound.top - 100) {
+            el.classList.remove("reveal-scroll-animate")
+        }
+    })
+}
 
-    }
-    
-})
-    
-})
+window.addEventListener("scroll", revealScrollElements)
+window.addEventListener("load", revealScrollElements)
+revealScrollElements()
 
 
 //Collections

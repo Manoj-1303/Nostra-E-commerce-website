@@ -39,8 +39,17 @@ products.forEach((product)=>{
     container.append(createItem)
 })
 
+var noResultsMessage = document.createElement("p")
+noResultsMessage.textContent = "No matching products found"
+noResultsMessage.style.display = "none"
+noResultsMessage.style.marginTop = "14px"
+noResultsMessage.style.fontSize = "1rem"
+noResultsMessage.style.color = "#5d646e"
+container.insertAdjacentElement("afterend", noResultsMessage)
+
 var filterList =[]
 var tags = document.getElementsByName("tags")
+var searchInput = document.querySelector('.navbar-search input[type="search"]')
 console.log(tags)
 
 tags.forEach((tag)=>{
@@ -64,10 +73,20 @@ tags.forEach((tag)=>{
     })
 })
 
-// var searchInput = document.getElementById("searchInput")
-// searchInput.addEventListener("keyup",function(){
-//     update()
-// })
+if (searchInput) {
+    searchInput.addEventListener("input", function () {
+        update()
+    })
+
+    // Keep filtering in place when user presses Enter in the search field.
+    var searchForm = searchInput.closest("form")
+    if (searchForm) {
+        searchForm.addEventListener("submit", function (e) {
+            e.preventDefault()
+            update()
+        })
+    }
+}
 
 function update()
 {
@@ -77,12 +96,15 @@ function update()
     
 
     
+    var searchText = searchInput ? searchInput.value.trim().toLowerCase() : ""
     var productList = document.querySelectorAll(".product")
+    var visibleCount = 0
     for(var i=0;i<productList.length;i++){
-        var check = false
+        var matchesTagFilter = false
         var product=productList[i]
         console.log(product)
         var temp=product.querySelector("tags").innerHTML
+        var productName = product.querySelector("h1").innerText.toLowerCase()
        
         console.log("elemen"+temp)
         
@@ -96,22 +118,29 @@ function update()
                 tempFilterArray.forEach((i)=>{
                 if(j==i)
                 {
-                    check=true
+                    matchesTagFilter=true
                 }
             })
         })
 
 
-        if(!check && filterList.length>0)
+        var matchesSearchFilter = productName.indexOf(searchText) > -1
+
+        if((!matchesTagFilter && filterList.length>0) || !matchesSearchFilter)
         {
             product.style.display="none"
         }
         else{
             product.style.display="block"
+            visibleCount++
         }
 
         
     };
 
+    noResultsMessage.style.display = visibleCount === 0 ? "block" : "none"
+
 
 }
+
+update()
