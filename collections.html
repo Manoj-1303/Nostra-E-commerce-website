@@ -91,15 +91,42 @@
 
                 </div>
 
+                <h3 class="filter-section-price"> Price </h3>
+                <div class="price-filter">
+                    <input type="number" id="min-price" placeholder="Min" min="0">
+                    <input type="number" id="max-price" placeholder="Max" min="0">
+                </div>
+
+                <button id="clear-filters" type="button" class="clear-filters-btn">Clear All</button>
+
 
                 <hr class="vertical-line">
             </div>
 
             <div class="product-section">
                 <form class="navbar-search">
-                    <input type="search" placeholder="search">
+                    <input type="search" placeholder="Search products">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </form>
+
+                <div class="collection-toolbar">
+                    <p id="results-count">0 Products</p>
+                    <div class="toolbar-actions">
+                        <select id="sort-select" aria-label="Sort products">
+                            <option value="default">Sort: Default</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="name-asc">Name: A to Z</option>
+                        </select>
+
+                        <div class="view-toggle" role="group" aria-label="Toggle product view">
+                            <button id="grid-view" class="active" type="button" aria-pressed="true"><i class="fa-solid fa-grip"></i></button>
+                            <button id="list-view" type="button" aria-pressed="false"><i class="fa-solid fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="active-filters" class="active-filters"></div>
 
                 <div class="products">
                 </div>
